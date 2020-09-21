@@ -10,6 +10,8 @@ const app = express();
 
 const mailchimp = new Mailchimp(mc_api_key);
 
+app.use(express.static(path.join(__dirname, 'client/build')))
+
 // API CALLS
 app.get("/api/newmember", (req, res) => {
     mailchimp
